@@ -1,24 +1,20 @@
 package com.dyurekdeler.WarehouseService.model
 
-import org.springframework.data.annotation.Id
-import java.time.LocalDateTime
-
-data class Delivery(
-    @Id
+data class DeliveryDto(
     val id: Long? = null,
     val product: String,
     val supplier: String,
     val quantity: Long,
     val expectedDate: String,
     val expectedWarehouse: String,
-    val isReceived: Boolean = false
 )
 
-fun Delivery.toDto(): DeliveryDto = DeliveryDto(
+fun DeliveryDto.toEntity(): Delivery = Delivery(
     id = id,
     product = product,
     supplier = supplier,
     quantity = quantity,
     expectedDate = expectedDate,
     expectedWarehouse = expectedWarehouse,
+    isReceived = true
 )

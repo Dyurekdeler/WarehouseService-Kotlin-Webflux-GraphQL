@@ -1,6 +1,8 @@
 package com.dyurekdeler.WarehouseService.service
 
 import com.dyurekdeler.WarehouseService.model.Delivery
+import com.dyurekdeler.WarehouseService.model.DeliveryDto
+import com.dyurekdeler.WarehouseService.model.toEntity
 import com.dyurekdeler.WarehouseService.repository.DeliveryRepository
 import kotlinx.coroutines.reactive.awaitFirst
 import kotlinx.coroutines.reactive.awaitSingle
@@ -18,16 +20,11 @@ class DeliveryService(
         return deliveryRepository.findById(id).awaitSingle()
     }
 
-    suspend fun addDelivery(product: String): Delivery? {
-        return deliveryRepository.save(Delivery(
-            product = product
-        )).awaitSingle()
+    suspend fun addDelivery(deliveryDto: DeliveryDto): Delivery? {
+        return deliveryRepository.save(deliveryDto.toEntity()).awaitSingle()
     }
 
-    suspend fun updateDelivery(id: Long, product: String): Delivery? {
-        return deliveryRepository.save(Delivery(
-            id = id,
-            product = product
-        )).awaitSingle()
+    suspend fun updateDelivery(deliveryDto: DeliveryDto): Delivery? {
+        return deliveryRepository.save(deliveryDto.toEntity()).awaitSingle()
     }
 }

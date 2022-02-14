@@ -1,13 +1,5 @@
 TRUNCATE TABLE delivery;
 
-INSERT INTO delivery (id, product) VALUES
-(1, 'Whip'),
-(2, 'Dagger'),
-(3, 'Katana'),
-(4, 'Boomerang'),
-(5, 'Rapier'),
-(6, 'Basilard'),
-(7, 'Gurthang'),
-(8, 'Marsil'),
-(9, 'Claymore'),
-(10,'Morning star');
+INSERT INTO delivery (id, product, supplier, quantity, expected_date, expected_warehouse, is_received) VALUES
+(1, 'Bananas', 'JungleInc', 1000000, '2027-01-08T07:17:48.237Z', 'TheMoon', 0),
+(2, 'Saiyans', 'Bardock', 9001, '2019-10-10T09:08:11.098Z', 'Namek', 0);
