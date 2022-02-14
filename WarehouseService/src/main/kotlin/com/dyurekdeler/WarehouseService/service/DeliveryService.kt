@@ -24,7 +24,12 @@ class DeliveryService(
         return deliveryRepository.save(deliveryDto.toEntity()).awaitSingle()
     }
 
-    suspend fun updateDelivery(deliveryDto: DeliveryDto): Delivery? {
-        return deliveryRepository.save(deliveryDto.toEntity()).awaitSingle()
+    suspend fun updateDelivery(id: Long): Delivery? {
+        val deliveryToUpdate = deliveryRepository.findById(id).awaitSingle()
+        deliveryToUpdate?.let {
+            deliveryToUpdate.isReceived = true
+            return deliveryRepository.save(deliveryToUpdate).awaitSingle()
+        } ?: return null
+
     }
 }

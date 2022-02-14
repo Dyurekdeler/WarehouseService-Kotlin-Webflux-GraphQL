@@ -11,7 +11,7 @@ data class Delivery(
     val quantity: Long,
     val expectedDate: String,
     val expectedWarehouse: String,
-    val isReceived: Boolean = false
+    var isReceived: Boolean = false
 )
 
 fun Delivery.toDto(): DeliveryDto = DeliveryDto(
