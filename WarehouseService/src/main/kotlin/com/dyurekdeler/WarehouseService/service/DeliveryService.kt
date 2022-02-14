@@ -16,6 +16,11 @@ class DeliveryService(
         return deliveryRepository.findAll().collectList().awaitFirst()
     }
 
+    suspend fun deliveries(isReceived: Boolean): MutableList<Delivery> {
+        return deliveryRepository.findAllByIsReceived(isReceived).collectList().awaitFirst()
+    }
+
+
     suspend fun delivery(id: Long): Delivery? {
         return deliveryRepository.findById(id).awaitSingle()
     }

@@ -10,8 +10,9 @@ import org.springframework.stereotype.Component
 class DeliveryQuery(
     private val deliveryService: DeliveryService
 ): Query {
-    suspend fun deliveries(): MutableList<Delivery> {
-        return deliveryService.deliveries()
+
+    suspend fun deliveries(isReceived: Boolean): MutableList<Delivery> {
+        return deliveryService.deliveries(isReceived)
     }
 
     suspend fun delivery(id: Long): Delivery? {
