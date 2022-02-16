@@ -11,7 +11,8 @@ class DeliveryQuery(
     private val deliveryService: DeliveryService
 ): Query {
 
-    suspend fun deliveries(isReceived: Boolean): MutableList<Delivery> {
+
+    suspend fun deliveries(isReceived: Boolean? = null): MutableList<Delivery> {
         return deliveryService.deliveries(isReceived)
     }
 

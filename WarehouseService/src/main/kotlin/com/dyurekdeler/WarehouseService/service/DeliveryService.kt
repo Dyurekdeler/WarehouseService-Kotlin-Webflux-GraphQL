@@ -13,8 +13,10 @@ class DeliveryService(
     private val deliveryRepository: DeliveryRepository
 ) {
 
-    suspend fun deliveries(isReceived: Boolean): MutableList<Delivery> {
-        return deliveryRepository.findAllByIsReceived(isReceived).collectList().awaitFirst()
+    suspend fun deliveries(isReceived: Boolean?): MutableList<Delivery> {
+        isReceived?.let {
+            return deliveryRepository.findAllByIsReceived(isReceived).collectList().awaitFirst()
+        } ?: return deliveryRepository.findAll().collectList().awaitFirst()
     }
 
     suspend fun delivery(id: Long): Delivery? {

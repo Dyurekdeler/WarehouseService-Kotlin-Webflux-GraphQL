@@ -14,6 +14,7 @@ Mutations:
 2- Update a given delivery's isReceived status to true
 
 The graphql-kotlin library automatically generates the schema.graphql
+You can find the library in this link https://github.com/ExpediaGroup/graphql-kotlin
 
 You can send requests via http://localhost:8080/playground
 
