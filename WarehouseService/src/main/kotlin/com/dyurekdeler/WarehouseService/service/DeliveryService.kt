@@ -12,14 +12,10 @@ import org.springframework.stereotype.Service
 class DeliveryService(
     private val deliveryRepository: DeliveryRepository
 ) {
-    suspend fun deliveries(): MutableList<Delivery> {
-        return deliveryRepository.findAll().collectList().awaitFirst()
-    }
 
     suspend fun deliveries(isReceived: Boolean): MutableList<Delivery> {
         return deliveryRepository.findAllByIsReceived(isReceived).collectList().awaitFirst()
     }
-
 
     suspend fun delivery(id: Long): Delivery? {
         return deliveryRepository.findById(id).awaitSingle()

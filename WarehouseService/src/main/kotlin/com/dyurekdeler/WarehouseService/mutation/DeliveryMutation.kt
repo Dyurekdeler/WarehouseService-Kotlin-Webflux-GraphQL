@@ -16,7 +16,8 @@ class DeliveryMutation(
         return deliveryService.addDelivery(deliveryDto)
     }
 
-    suspend fun updateDeliveryReceivedStatus(id: Long): Delivery? {
+    suspend fun markDeliveryAsReceived(id: Long): Delivery? {
         return deliveryService.updateDelivery(id)
     }
+
 }

@@ -1,7 +1,6 @@
 package com.dyurekdeler.WarehouseService.model
 
 import org.springframework.data.annotation.Id
-import java.time.LocalDateTime
 
 data class Delivery(
     @Id
