@@ -1,6 +1,5 @@
 package com.dyurekdeler.WarehouseService.mutation
 
-import com.dyurekdeler.WarehouseService.model.Delivery
 import com.dyurekdeler.WarehouseService.model.DeliveryDto
 import com.dyurekdeler.WarehouseService.service.DeliveryService
 import com.expediagroup.graphql.server.operations.Mutation

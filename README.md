@@ -6,12 +6,14 @@ WarehouseService is a service that receives deliveries and saves them to H2 data
 What does this service do?
 
 Queries:
-1- List all received or not-yet received deliveries
-2- List a delivery with given id
+1- List all received or not-yet received deliveries when parameter is defined
+2- List all deliveries when parameter is set null
+3- List a delivery with given id
 
 Mutations:
 1- Add a new delivery
-2- Update a given delivery's isReceived status to true
+2- Add a list of new deliveries
+3- Update a given delivery's isReceived status to true
 
 The graphql-kotlin library automatically generates the schema.graphql
 You can find the library in this link https://github.com/ExpediaGroup/graphql-kotlin
