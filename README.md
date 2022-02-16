@@ -1,0 +1,21 @@
+# WarehouseService-Kotlin-Webflux-GraphQL
+A practice project to learn GraphQL with Spring Webflux and Kotlin Spring in Microservice architecture
+
+WarehouseService is a service that receives deliveries and saves them to H2 database.
+
+What does this service do?
+
+Queries:
+1- List all received or not-yet received deliveries
+2- List a delivery with given id
+
+Mutations:
+1- Add a new delivery
+2- Update a given delivery's isReceived status to true
+
+The graphql-kotlin library automatically generates the schema.graphql
+
+You can send requests via http://localhost:8080/playground
+
+
+
