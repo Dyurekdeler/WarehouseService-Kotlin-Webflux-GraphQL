@@ -12,12 +12,16 @@ class DeliveryMutation(
     private val deliveryService: DeliveryService
 ): Mutation {
 
-    suspend fun addDelivery(deliveryDto: DeliveryDto): Delivery? {
+    suspend fun addDelivery(deliveryDto: DeliveryDto): DeliveryDto? {
         return deliveryService.addDelivery(deliveryDto)
     }
 
-    suspend fun markDeliveryAsReceived(id: Long): Delivery? {
-        return deliveryService.updateDelivery(id)
+    suspend fun addDeliveries(deliveryDtos: List<DeliveryDto>): List<DeliveryDto>? {
+        return deliveryService.addDeliveries(deliveryDtos)
+    }
+
+    suspend fun markDeliveryAsReceived(deliveryId: Long): DeliveryDto? {
+        return deliveryService.updateDelivery(deliveryId)
     }
 
 }

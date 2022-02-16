@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS DELIVERY(
     product VARCHAR(100) NOT NULL,
     supplier VARCHAR(100) NOT NULL,
     quantity bigint NOT NULL,
-    expected_date datetime NOT NULL,
+    expected_date VARCHAR(100) NOT NULL,
     expected_warehouse VARCHAR(100) NOT NULL,
     is_received BOOL
 );

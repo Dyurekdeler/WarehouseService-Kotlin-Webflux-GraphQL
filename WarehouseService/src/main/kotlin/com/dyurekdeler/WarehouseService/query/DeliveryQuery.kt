@@ -1,6 +1,6 @@
 package com.dyurekdeler.WarehouseService.query
 
-import com.dyurekdeler.WarehouseService.model.Delivery
+import com.dyurekdeler.WarehouseService.model.DeliveryDto
 import com.dyurekdeler.WarehouseService.service.DeliveryService
 import com.expediagroup.graphql.server.operations.Query
 import org.springframework.stereotype.Component
@@ -12,12 +12,12 @@ class DeliveryQuery(
 ): Query {
 
 
-    suspend fun deliveries(isReceived: Boolean? = null): MutableList<Delivery> {
+    suspend fun deliveries(isReceived: Boolean? = null): MutableList<DeliveryDto> {
         return deliveryService.deliveries(isReceived)
     }
 
-    suspend fun delivery(id: Long): Delivery? {
-        return deliveryService.delivery(id)
+    suspend fun delivery(deliveryId: Long): DeliveryDto? {
+        return deliveryService.delivery(deliveryId)
     }
 
 }

@@ -14,10 +14,11 @@ data class Delivery(
 )
 
 fun Delivery.toDto(): DeliveryDto = DeliveryDto(
-    id = id,
+    deliveryId = id,
     product = product,
     supplier = supplier,
     quantity = quantity,
     expectedDate = expectedDate,
     expectedWarehouse = expectedWarehouse,
+    isReceived = isReceived
 )
