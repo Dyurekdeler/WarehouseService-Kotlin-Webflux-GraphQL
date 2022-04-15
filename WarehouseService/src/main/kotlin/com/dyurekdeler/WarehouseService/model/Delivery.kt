@@ -1,6 +1,7 @@
 package com.dyurekdeler.WarehouseService.model
 
 import org.springframework.data.annotation.Id
+import java.time.Instant
 
 data class Delivery(
     @Id
@@ -8,7 +9,7 @@ data class Delivery(
     val product: String,
     val supplier: String,
     val quantity: Long,
-    val expectedDate: String,
+    val expectedDate: Instant,
     val expectedWarehouse: String,
     var isReceived: Boolean = false
 )
